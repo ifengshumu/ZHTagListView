@@ -17,7 +17,7 @@
     ZHTagListView *listV = [[ZHTagListView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 0) tagTexts:list];
     [self.view addSubview:listV];
     listV.backgroundColor = [UIColor orangeColor];
-    [listV setTagClickHandler:^(ZHTagListView *tagListView, NSString *tagText, NSUInteger index) {
+    [listV setTagClickHandler:^(NSString *tagText, NSUInteger index) {
         //do something...
     }];
 
