@@ -1,6 +1,6 @@
 //
 //  ZHTagListView.m
-//  SummaryAndCustom
+//  ZHTagListView
 //
 //  Created by 李志华 on 2017/02/18.
 //  Copyright © 2017年 Stephen Lee. All rights reserved.
@@ -84,7 +84,7 @@
 
 -(void)tagBtnClick:(UIButton *)btn {
     if (self.tagClickHandler) {
-        self.tagClickHandler(self, btn.titleLabel.text, btn.tag-1000);
+        self.tagClickHandler(btn.titleLabel.text, btn.tag-1000);
     }
 }
 
