@@ -25,5 +25,5 @@
 @property (nonatomic, assign) CGFloat tagVerticalSpace;
 
 
-@property (nonatomic, copy) void (^tagClickHandler)(ZHTagListView *tagListView, NSString *tagText, NSUInteger index);
+@property (nonatomic, copy) void (^tagClickHandler)(NSString *tagText, NSUInteger index);
 @end
