@@ -21,47 +21,48 @@
     self.title = @"ZH标签排序";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    NSMutableArray *list = [NSMutableArray arrayWithObjects:@"OC",
+    NSMutableArray *list = [NSMutableArray arrayWithObjects:
                             @"Java",
                             @"JavaScript",
-                            @"jQuery",
+                            @"C",
+                            @"C#",
+                            @"C++",
+                            @".NET",
                             @"Python",
-                            @"都是语言",
-                            @"我都不会",
-                            @"CF最牛",
-                            @"CF最牛X",
-                            @"我都会",
-                            @"都是电脑语言",
                             @"PHP",
-                            @"网站开发",
+                            @"HTML5",
+                            @"Swift",
                             @"Object-C",nil];
     
-    ZHTagListView *listV = [[ZHTagListView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 0) tagTexts:list];
-    [self.view addSubview:listV];
+    ZHTagListView *listV = [[ZHTagListView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 0) configuration:[ZHTagListConfiguration defaultConfiguration] tagTexts:list];
     listV.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:listV];
     [listV setTagClickHandler:^(ZHTagListView *tagListView, NSString *tagText, NSUInteger index) {
         [self jump:tagText];
     }];
     
     NSMutableArray *_dataSource = @[@"宝马",
-                    @"3系",
-                    @"思域",
-                    @"本田雅阁",
-                    @"尼桑",
-                    @"雪佛兰",
-                    @"朗动",
-                    @"高尔夫",
-                    @"沃尔沃",
-                    @"兰博基尼",
-                    @"法拉利",].mutableCopy;
+                                    @"3系",
+                                    @"思域",
+                                    @"本田雅阁",
+                                    @"尼桑",
+                                    @"雪佛兰",
+                                    @"朗动",
+                                    @"高尔夫",
+                                    @"沃尔沃",
+                                    @"兰博基尼",
+                                    @"法拉利",].mutableCopy;
     
-    ZHTagListView *tagList = [[ZHTagListView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(listV.frame)+20, self.view.frame.size.width, 0) tagTexts:_dataSource];
-    [self.view addSubview:tagList];
-    tagList.tagListInset = UIEdgeInsetsMake(20, 30, 20, 30);
+    ZHTagListConfiguration *config = [ZHTagListConfiguration defaultConfiguration];
+    config.tagListInset = UIEdgeInsetsMake(20, 30, 20, 30);
+    
+    ZHTagListView *tagList = [[ZHTagListView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(listV.frame)+20, self.view.frame.size.width, 0) configuration:config tagTexts:_dataSource];
     tagList.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:tagList];
     [tagList.tagButtonList enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (idx == 6) {
             [obj setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            *stop = YES;
         }
     }];
     [tagList setTagClickHandler:^(ZHTagListView *tagListView, NSString *tagText, NSUInteger index) {
