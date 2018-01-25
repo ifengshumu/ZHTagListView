@@ -14,7 +14,8 @@
     configuration.tagTextMargin = 10;
     configuration.tagTextFont = [UIFont systemFontOfSize:15];
     configuration.tagTextColor = [UIColor grayColor];
-    configuration.tagMaxWidth = [@"标签列表视图" boundingRectWithSize:CGSizeMake(MAXFLOAT, configuration.tagHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:configuration.tagTextFont} context:nil].size.width;
+    configuration.limitWordNumber = 8;
+    configuration.tagMaxWidth = 0;
     configuration.tagListInset = UIEdgeInsetsZero;
     configuration.tagHorizontalSpace = 10.0;
     configuration.tagVerticalSpace = 10.0;
@@ -65,14 +66,23 @@
         tagBtn.layer.cornerRadius = 2.5;
         [tagBtn setTitleColor:self.configuration.tagTextColor forState:UIControlStateNormal];
         tagBtn.titleLabel.font = self.configuration.tagTextFont;
-        [tagBtn setTitle:self.tags[i] forState:UIControlStateNormal];
+        tagBtn.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+        NSString *tag = self.tags[i];
+        if (self.configuration.tagMaxWidth <= 0) {
+            if (tag.length > self.configuration.limitWordNumber) {
+                tag = [NSString stringWithFormat:@"%@%@", [tag substringToIndex:self.configuration.limitWordNumber], @"..."];
+            }
+            [tagBtn setTitle:tag forState:UIControlStateNormal];
+        } else {
+            [tagBtn setTitle:tag forState:UIControlStateNormal];
+        }
         tagBtn.tag = 1000+i;
         [tagBtn addTarget:self action:@selector(tagBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         
         //计算文字大小
-        CGFloat tagBtnW = [self.tags[i] boundingRectWithSize:CGSizeMake(MAXFLOAT, tagBtnH) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:tagBtn.titleLabel.font} context:nil].size.width;
+        CGFloat tagBtnW = [tag boundingRectWithSize:CGSizeMake(MAXFLOAT, tagBtnH) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:tagBtn.titleLabel.font} context:nil].size.width;
         tagBtnW += self.configuration.tagTextMargin*2;
-        if (tagBtnW > self.configuration.tagMaxWidth) {
+        if (self.configuration.tagMaxWidth > 0 && tagBtnW > self.configuration.tagMaxWidth) {
             tagBtnW = self.configuration.tagMaxWidth;
         }
         //判断按钮是否超过屏幕的宽

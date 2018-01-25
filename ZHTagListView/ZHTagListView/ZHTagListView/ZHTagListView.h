@@ -19,7 +19,9 @@
 @property (nonatomic, strong) UIFont *tagTextFont;
 ///标签文字颜色，默认grayColor
 @property (nonatomic, strong) UIColor *tagTextColor;
-///标签最大宽度，默认字体六个字的宽度
+///标签文字字数限制，默认八个字
+@property (nonatomic, assign) CGFloat limitWordNumber;
+///标签最大宽度，默认0，此属性大于0时limitWordNumber失效
 @property (nonatomic, assign) CGFloat tagMaxWidth;
 ///整个标签四周边距，默认:UIEdgeInsetsZero
 @property (nonatomic, assign) UIEdgeInsets tagListInset;
