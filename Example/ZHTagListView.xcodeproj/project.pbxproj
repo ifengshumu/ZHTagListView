@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16A93C552157CFBC009A29BD /* ZHTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A93C542157CFBB009A29BD /* ZHTagListView.m */; };
 		16B719F11FE7B63900D08C1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B719F01FE7B63900D08C1D /* AppDelegate.m */; };
 		16B719F41FE7B63900D08C1D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B719F31FE7B63900D08C1D /* ViewController.m */; };
 		16B719F71FE7B63900D08C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16B719F51FE7B63900D08C1D /* Main.storyboard */; };
 		16B719F91FE7B63900D08C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16B719F81FE7B63900D08C1D /* Assets.xcassets */; };
 		16B719FC1FE7B63900D08C1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16B719FA1FE7B63900D08C1D /* LaunchScreen.storyboard */; };
 		16B719FF1FE7B63A00D08C1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B719FE1FE7B63A00D08C1D /* main.m */; };
-		16B71A081FE7B66600D08C1D /* ZHTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B71A071FE7B66600D08C1D /* ZHTagListView.m */; };
 		16B71A0B1FE7B6BE00D08C1D /* ZHTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B71A0A1FE7B6BE00D08C1D /* ZHTitleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16A93C532157CFBB009A29BD /* ZHTagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTagListView.h; sourceTree = "<group>"; };
+		16A93C542157CFBB009A29BD /* ZHTagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTagListView.m; sourceTree = "<group>"; };
 		16B719EC1FE7B63900D08C1D /* ZHTagListView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHTagListView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16B719EF1FE7B63900D08C1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		16B719F01FE7B63900D08C1D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -28,8 +30,6 @@
 		16B719FB1FE7B63900D08C1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16B719FD1FE7B63900D08C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16B719FE1FE7B63A00D08C1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		16B71A061FE7B66600D08C1D /* ZHTagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTagListView.h; sourceTree = "<group>"; };
-		16B71A071FE7B66600D08C1D /* ZHTagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTagListView.m; sourceTree = "<group>"; };
 		16B71A091FE7B6BE00D08C1D /* ZHTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTitleViewController.h; sourceTree = "<group>"; };
 		16B71A0A1FE7B6BE00D08C1D /* ZHTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTitleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16A93C522157CFBB009A29BD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				16A93C532157CFBB009A29BD /* ZHTagListView.h */,
+				16A93C542157CFBB009A29BD /* ZHTagListView.m */,
+			);
+			name = Classes;
+			path = ../../ZHTagListView/Classes;
+			sourceTree = "<group>";
+		};
 		16B719E31FE7B63900D08C1D = {
 			isa = PBXGroup;
 			children = (
@@ -64,7 +74,7 @@
 		16B719EE1FE7B63900D08C1D /* ZHTagListView */ = {
 			isa = PBXGroup;
 			children = (
-				16B71A051FE7B64500D08C1D /* ZHTagListView */,
+				16A93C522157CFBB009A29BD /* Classes */,
 				16B719EF1FE7B63900D08C1D /* AppDelegate.h */,
 				16B719F01FE7B63900D08C1D /* AppDelegate.m */,
 				16B719F21FE7B63900D08C1D /* ViewController.h */,
@@ -76,15 +86,6 @@
 				16B719FA1FE7B63900D08C1D /* LaunchScreen.storyboard */,
 				16B719FD1FE7B63900D08C1D /* Info.plist */,
 				16B719FE1FE7B63A00D08C1D /* main.m */,
-			);
-			path = ZHTagListView;
-			sourceTree = "<group>";
-		};
-		16B71A051FE7B64500D08C1D /* ZHTagListView */ = {
-			isa = PBXGroup;
-			children = (
-				16B71A061FE7B66600D08C1D /* ZHTagListView.h */,
-				16B71A071FE7B66600D08C1D /* ZHTagListView.m */,
 			);
 			path = ZHTagListView;
 			sourceTree = "<group>";
@@ -160,11 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A93C552157CFBC009A29BD /* ZHTagListView.m in Sources */,
 				16B71A0B1FE7B6BE00D08C1D /* ZHTitleViewController.m in Sources */,
 				16B719F41FE7B63900D08C1D /* ViewController.m in Sources */,
 				16B719FF1FE7B63A00D08C1D /* main.m in Sources */,
 				16B719F11FE7B63900D08C1D /* AppDelegate.m in Sources */,
-				16B71A081FE7B66600D08C1D /* ZHTagListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
