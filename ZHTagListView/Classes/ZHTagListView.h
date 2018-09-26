@@ -22,12 +22,12 @@
 @property (nonatomic, assign) CGFloat limitWordNumber;
 ///标签最大宽度，默认0，此属性大于0时limitWordNumber失效
 @property (nonatomic, assign) CGFloat tagMaxWidth;
-///整个标签四周边距，默认:UIEdgeInsetsZero
-@property (nonatomic, assign) UIEdgeInsets tagListInset;
 ///标签左右间距，默认10
 @property (nonatomic, assign) CGFloat tagHorizontalSpace;
 ///标签上下间距，默认10
 @property (nonatomic, assign) CGFloat tagVerticalSpace;
+    ///标签视图四周边距，默认:UIEdgeInsetsZero
+    @property (nonatomic, assign) UIEdgeInsets tagListViewInset;
 @end
 
 

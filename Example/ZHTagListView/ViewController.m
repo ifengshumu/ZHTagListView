@@ -54,7 +54,7 @@
                                     @"法拉利",].mutableCopy;
     
     ZHTagListConfiguration *config = [ZHTagListConfiguration defaultConfiguration];
-    config.tagListInset = UIEdgeInsetsMake(20, 30, 20, 30);
+    config.tagListViewInset = UIEdgeInsetsMake(20, 30, 20, 30);
     
     ZHTagListView *tagList = [[ZHTagListView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(listV.frame)+20, self.view.frame.size.width, 0) configuration:config tagTexts:_dataSource];
     tagList.backgroundColor = [UIColor yellowColor];

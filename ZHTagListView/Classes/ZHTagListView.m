@@ -15,7 +15,7 @@
     configuration.tagTextColor = [UIColor grayColor];
     configuration.limitWordNumber = 8;
     configuration.tagMaxWidth = 0;
-    configuration.tagListInset = UIEdgeInsetsZero;
+    configuration.tagListViewInset = UIEdgeInsetsZero;
     configuration.tagHorizontalSpace = 10.0;
     configuration.tagVerticalSpace = 10.0;
     return configuration;
@@ -51,10 +51,10 @@
     }
     [self.tagBtnArray removeAllObjects];
     
-    CGFloat kWidth = self.frame.size.width - self.configuration.tagListInset.left - self.configuration.tagListInset.right;
+    CGFloat kWidth = self.frame.size.width - self.configuration.tagListViewInset.left - self.configuration.tagListViewInset.right;
     
-    CGFloat tagBtnX = self.configuration.tagListInset.left;
-    CGFloat tagBtnY = self.configuration.tagListInset.top;
+    CGFloat tagBtnX = self.configuration.tagListViewInset.left;
+    CGFloat tagBtnY = self.configuration.tagListViewInset.top;
     CGFloat tagBtnH = self.configuration.tagHeight;
     
     for (int i = 0; i < self.tags.count; i++) {
@@ -86,7 +86,7 @@
         }
         //判断按钮是否超过屏幕的宽
         if ((tagBtnX + tagBtnW) > kWidth) {
-            tagBtnX = self.configuration.tagListInset.left;
+            tagBtnX = self.configuration.tagListViewInset.left;
             tagBtnY += tagBtnH + self.configuration.tagVerticalSpace;
         }
         //frame
@@ -97,7 +97,7 @@
         [self.tagBtnArray addObject:tagBtn];
         if (i == self.tags.count - 1) {
             CGRect rect = self.frame;
-            rect.size.height = CGRectGetMaxY(tagBtn.frame) + self.configuration.tagListInset.bottom;
+            rect.size.height = CGRectGetMaxY(tagBtn.frame) + self.configuration.tagListViewInset.bottom;
             self.frame = rect;
         }
     }
