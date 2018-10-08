@@ -1,4 +1,10 @@
 # 标签，自适应宽度，自动折行，可限制字数或者宽度
+
+## 支持cocoapods导入
+```
+pod 'ZHTagListView'
+```
+
 ## 使用方法：
 ```
 NSMutableArray *list = [NSMutableArray arrayWithObjects:
